@@ -14,10 +14,10 @@ class Solution:
         up = sorted(up)
         low = sorted(low)
         
-        result = []
+        result=[]
         up_idx = 0
         low_idx = 0
-        
+
         for n in arr:
             if n == 1:
                 result.append(up[up_idx])
