@@ -16,5 +16,3 @@ class Solution:
             if len(set(temp)) == 1:
                 return True
         return False
-        
-        
