@@ -1,13 +1,15 @@
 
 def custom_serach(s,substr):
-    track =[]
-    st = substr[0]
-    fd = len(substr)
-    for i in range(s):
-        if s[i] == st:
-            track.append(i)
-    for i in track:
-        
+    track = {}
+    for i in range(len(substr)):
+        if substr[i] in track:
+            track[substr[i]]=i
+        else:
+            track[substr[i]]=0
+    print(track)
+    return 1
+
+
 
 
 
@@ -15,5 +17,5 @@ def custom_serach(s,substr):
 
 
 s = "abcdabcababb"
-tofind="abb"
+tofind="abbcabcaab"
 ans = custom_serach(s,tofind)
