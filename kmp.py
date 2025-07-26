@@ -1,13 +1,21 @@
 
-def custom_serach(s,substr):
-    track = {}
-    for i in range(len(substr)):
-        if substr[i] in track:
-            track[substr[i]]=i
+def lps(pattern):
+    lps = [0]*len(pattern)
+    length=0 
+    i=1
+
+    while i<len(pattern):
+        if pattern[i] == pattern[length]:
+            length += 1
+            lps[i] = length
+            i += 1
         else:
-            track[substr[i]]=0
-    print(track)
-    return 1
+            if length != 0:
+                length = lps[length - 1]
+            else:
+                lps[i] = 0
+                i += 1
+    return lps
 
 
 
@@ -16,6 +24,7 @@ def custom_serach(s,substr):
 
 
 
-s = "abcdabcababb"
-tofind="abbcabcaab"
-ans = custom_serach(s,tofind)
+
+s = "bbabcdabhdabcfjdnwdbbbabcdabhsjnakjbbbabcdabhdabcf"
+tofind="bbabcdabhdabcf"
+ans = lps(tofind)
